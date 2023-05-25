@@ -5,6 +5,8 @@ using Microsoft.SemanticKernel.Diagnostics;
 
 namespace Microsoft.SemanticKernel.Connectors.Memory.Weaviate.Diagnostics;
 
+#pragma warning disable RCS1194 // Implement exception constructors
+
 /// <summary>
 /// Exception thrown for errors related to the Weaviate connector.
 /// </summary>
@@ -70,6 +72,10 @@ public class WeaviateMemoryException : SKException
             ErrorCodes.FailedToGetVectorData => "Failed to get vector data",
             ErrorCodes.FailedToRemoveVectorData => "Failed to remove vector data",
             ErrorCodes.CollectionNameConflict => "Naming conflict for the collection name",
+            ErrorCodes.FailedToCreateCollection => "Failed to create the collection",
+            ErrorCodes.FailedToDeleteCollection => "Failed to delete the collection",
+            ErrorCodes.FailedToListCollections => "Failed to list collections",
+            ErrorCodes.FailedToGetClass => "Failed to get class",
             _ => $"Unknown error ({errorCode:G})",
         };
 
@@ -81,11 +87,6 @@ public class WeaviateMemoryException : SKException
     /// </summary>
     public enum ErrorCodes
     {
-        /// <summary>
-        ///     Unknown error.
-        /// </summary>
-        UnknownError,
-
         /// <summary>
         ///     Failed to upsert the vector.
         /// </summary>
@@ -113,6 +114,21 @@ public class WeaviateMemoryException : SKException
         ///     both transformed to the class name of SKthiscollection - even though
         ///     semantic kernel would consider them as unique collection names.
         /// </summary>
-        CollectionNameConflict
+        CollectionNameConflict,
+
+        /// <summary>
+        ///     Failed to delete a collection.
+        /// </summary>
+        FailedToDeleteCollection,
+
+        /// <summary>
+        ///     Failed to list collections.
+        /// </summary>
+        FailedToListCollections,
+
+        /// <summary>
+        ///     Failed to get a Weaviate class.
+        /// </summary>
+        FailedToGetClass
     }
 }
