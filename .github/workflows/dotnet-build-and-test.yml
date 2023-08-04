@@ -56,7 +56,7 @@ jobs:
       run: |
         export SOLUTIONS=$(find ./dotnet/ -type f -name "*.sln" | tr '\n' ' ')
         for solution in $SOLUTIONS; do
-          dotnet build -c ${{ matrix.configuration }} /warnaserror /app/$solution
+          dotnet build -c ${{ matrix.configuration }} /warnaserror $solution
         done
       
     - name: Run Unit Tests
