@@ -34,6 +34,27 @@ public partial class AssistantBuilder
     }
 
     /// <summary>
+    /// Initializes a new instance of the <see cref="AssistantBuilder"/> class
+    /// that clones an existing assistant definition.
+    /// </summary>
+    /// <param name="assistant">The source assistant to clone.</param>
+    /// <param name="apiKey">A valid Open AI API key.</param>
+    /// <param name="includePlugins">Optional flag to control if plugins are included (default: true)</param>
+    /// <remarks>
+    /// The cloned definition can optionally be further customized via the builder.
+    /// </remarks>
+    public AssistantBuilder(IAssistant assistant, string apiKey, bool includePlugins = true)
+        : this()
+    {
+        this.WithName(assistant.Name)
+            .WithDescription(assistant.Description)
+            .WithInstructions(assistant.Instructions)
+            .WithMetadata(assistant.MetaData)
+            .WithOpenAIChatCompletion(assistant.Model, apiKey)
+            .WithPlugins(includePlugins ? assistant.Plugins : Array.Empty<KernelPlugin>());
+    }
+
+    /// <summary>
     /// Create a <see cref="IAssistant"/> instance.
     /// </summary>
     /// <param name="cancellationToken">A cancellation token</param>
@@ -148,7 +169,7 @@ public partial class AssistantBuilder
     /// Define the assistant metadata (optional).
     /// </summary>
     /// <returns><see cref="AssistantBuilder"/> instance for fluid expression.</returns>
-    public AssistantBuilder WithMetadata(IDictionary<string, object> metadata)
+    public AssistantBuilder WithMetadata(IReadOnlyDictionary<string, object> metadata)
     {
         foreach (var kvp in metadata)
         {

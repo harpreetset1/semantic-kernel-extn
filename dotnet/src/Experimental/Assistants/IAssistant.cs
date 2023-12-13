@@ -1,5 +1,6 @@
 ﻿// Copyright (c) Microsoft. All rights reserved.
 
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -62,7 +63,12 @@ public interface IAssistant
     /// <summary>
     /// Expose the assistant as a plugin.
     /// </summary>
-    public AssistantPlugin AsPlugin();
+    AssistantPlugin AsPlugin();
+
+    /// <summary>
+    /// Expose the assistant metadata.
+    /// </summary>
+    IReadOnlyDictionary<string, object> MetaData { get; }
 
     /// <summary>
     /// Creates a new assistant chat thread.

@@ -61,6 +61,13 @@ public sealed class AssistantHarness
                 assistantId: assistant.Id).ConfigureAwait(true);
 
         this.DumpAssistant(copy);
+
+        var clone =
+            await new AssistantBuilder(assistant, TestConfig.OpenAIApiKey)
+                .BuildAsync()
+                .ConfigureAwait(true);
+
+        this.DumpAssistant(clone);
     }
 
     /// <summary>

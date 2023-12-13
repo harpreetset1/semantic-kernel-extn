@@ -49,6 +49,8 @@ internal sealed class Assistant : IAssistant
     /// <inheritdoc/>
     public string Instructions => this._model.Instructions;
 
+    public IReadOnlyDictionary<string, object> MetaData => this._model.Metadata;
+
     private static readonly Regex s_removeInvalidCharsRegex = new("[^0-9A-Za-z-]");
 
     private readonly OpenAIRestContext _restContext;
