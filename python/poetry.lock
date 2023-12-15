@@ -1147,21 +1147,18 @@ tqdm = ["tqdm"]
 
 [[package]]
 name = "google-ai-generativelanguage"
-version = "0.3.3"
+version = "0.4.0"
 description = "Google Ai Generativelanguage API client library"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "google-ai-generativelanguage-0.3.3.tar.gz", hash = "sha256:4b59993e0fd63593171cbb089e7f76f71a4333a62741d3929159aeb2e3532a83"},
-    {file = "google_ai_generativelanguage-0.3.3-py3-none-any.whl", hash = "sha256:2696fe952ceea233e1a95b89a428b7dd587eac6687bd20cc62edd5c8abc32b98"},
+    {file = "google-ai-generativelanguage-0.4.0.tar.gz", hash = "sha256:c8199066c08f74c4e91290778329bb9f357ba1ea5d6f82de2bc0d10552bf4f8c"},
+    {file = "google_ai_generativelanguage-0.4.0-py3-none-any.whl", hash = "sha256:e4c425376c1ee26c78acbc49a24f735f90ebfa81bf1a06495fae509a2433232c"},
 ]
 
 [package.dependencies]
 google-api-core = {version = ">=1.34.0,<2.0.dev0 || >=2.11.dev0,<3.0.0dev", extras = ["grpc"]}
-proto-plus = [
-    {version = ">=1.22.0,<2.0.0dev", markers = "python_version < \"3.11\""},
-    {version = ">=1.22.2,<2.0.0dev", markers = "python_version >= \"3.11\""},
-]
+proto-plus = ">=1.22.3,<2.0.0dev"
 protobuf = ">=3.19.5,<3.20.0 || >3.20.0,<3.20.1 || >3.20.1,<4.21.0 || >4.21.0,<4.21.1 || >4.21.1,<4.21.2 || >4.21.2,<4.21.3 || >4.21.3,<4.21.4 || >4.21.4,<4.21.5 || >4.21.5,<5.0.0dev"
 
 [[package]]
@@ -1221,23 +1218,23 @@ requests = ["requests (>=2.20.0,<3.0.0.dev0)"]
 
 [[package]]
 name = "google-generativeai"
-version = "0.2.1"
+version = "0.3.1"
 description = "Google Generative AI High level API client library and tools."
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "google_generativeai-0.2.1-py3-none-any.whl", hash = "sha256:892c80f33fda68f531e97de67c7796f9c10f68708599506bba2388c53d1d332e"},
+    {file = "google_generativeai-0.3.1-py3-none-any.whl", hash = "sha256:800ec6041ca537b897d7ba654f4125651c64b38506f2bfce3b464370e3333a1b"},
 ]
 
 [package.dependencies]
-google-ai-generativelanguage = "0.3.3"
+google-ai-generativelanguage = "0.4.0"
 google-api-core = "*"
 google-auth = "*"
 protobuf = "*"
 tqdm = "*"
 
 [package.extras]
-dev = ["absl-py", "black", "nose2", "pandas", "pytype", "pyyaml"]
+dev = ["Pillow", "absl-py", "black", "ipython", "nose2", "pandas", "pytype", "pyyaml"]
 
 [[package]]
 name = "googleapis-common-protos"
@@ -3642,6 +3639,7 @@ files = [
     {file = "pymongo-4.5.0-cp312-cp312-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:6422b6763b016f2ef2beedded0e546d6aa6ba87910f9244d86e0ac7690f75c96"},
     {file = "pymongo-4.5.0-cp312-cp312-win32.whl", hash = "sha256:77cfff95c1fafd09e940b3fdcb7b65f11442662fad611d0e69b4dd5d17a81c60"},
     {file = "pymongo-4.5.0-cp312-cp312-win_amd64.whl", hash = "sha256:e57d859b972c75ee44ea2ef4758f12821243e99de814030f69a3decb2aa86807"},
+    {file = "pymongo-4.5.0-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:8443f3a8ab2d929efa761c6ebce39a6c1dca1c9ac186ebf11b62c8fe1aef53f4"},
     {file = "pymongo-4.5.0-cp37-cp37m-manylinux1_i686.whl", hash = "sha256:2b0176f9233a5927084c79ff80b51bd70bfd57e4f3d564f50f80238e797f0c8a"},
     {file = "pymongo-4.5.0-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:89b3f2da57a27913d15d2a07d58482f33d0a5b28abd20b8e643ab4d625e36257"},
     {file = "pymongo-4.5.0-cp37-cp37m-manylinux2014_aarch64.whl", hash = "sha256:5caee7bd08c3d36ec54617832b44985bd70c4cbd77c5b313de6f7fce0bb34f93"},
@@ -5734,4 +5732,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8"
-content-hash = "7dc035568253fda8c65b36717c9faf788d148135564b62a4af00bf31f524d887"
+content-hash = "3c29233149517acd3351afc0cd2f171848bf7bdc91d872697ba616471d954076"
